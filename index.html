@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Expense Manager</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar">
+
+            <div class="logo">
+                💰 Student Expense Manager
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#dashboard">Dashboard</a></li>
+                <li><a href="#expenses">Expenses</a></li>
+                <li><a href="#budget">Budget</a></li>
+                <li><a href="#reports">Reports</a></li>
+            </ul>
+
+        </nav>
+    </header>
+
+
+    <!-- Hero Section -->
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h1>Manage Your Student Expenses Easily</h1>
+
+            <p>
+                Track your daily spending, manage your budget,
+                and understand where your money goes.
+            </p>
+
+            <button onclick="scrollToExpenses()">
+                Add Your First Expense
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- Dashboard -->
+    <section id="dashboard" class="section">
+
+        <h2>Expense Dashboard</h2>
+
+        <div class="dashboard-cards">
+
+            <div class="dashboard-card">
+                <span>💵</span>
+                <h3>Total Balance</h3>
+                <p id="balance">₹0</p>
+            </div>
+
+            <div class="dashboard-card">
+                <span>💸</span>
+                <h3>Total Expenses</h3>
+                <p id="totalExpense">₹0</p>
+            </div>
+
+            <div class="dashboard-card">
+                <span>📊</span>
+                <h3>Monthly Budget</h3>
+                <p id="budgetAmount">₹10,000</p>
+            </div>
+
+            <div class="dashboard-card">
+                <span>⚠️</span>
+                <h3>Remaining</h3>
+                <p id="remaining">₹10,000</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Add Expense -->
+    <section id="expenses" class="section">
+
+        <h2>Add New Expense</h2>
+
+        <div class="expense-form">
+
+            <input
+                type="text"
+                id="expenseName"
+                placeholder="Expense Name"
+            >
+
+            <input
+                type="number"
+                id="expenseAmount"
+                placeholder="Amount (₹)"
+            >
+
+            <select id="expenseCategory">
+
+                <option value="">Select Category</option>
+
+                <option value="Food">🍔 Food</option>
+
+                <option value="Transport">🚌 Transport</option>
+
+                <option value="Education">📚 Education</option>
+
+                <option value="Shopping">🛍️ Shopping</option>
+
+                <option value="Entertainment">🎮 Entertainment</option>
+
+                <option value="Other">📦 Other</option>
+
+            </select>
+
+            <input
+                type="date"
+                id="expenseDate"
+            >
+
+            <button onclick="addExpense()">
+                Add Expense
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- Expense List -->
+    <section class="section">
+
+        <h2>Recent Expenses</h2>
+
+        <div id="expenseList" class="expense-list">
+
+            <p class="empty-message">
+                No expenses added yet.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- Budget -->
+    <section id="budget" class="section budget-section">
+
+        <h2>Monthly Budget</h2>
+
+        <div class="budget-box">
+
+            <p>Set your monthly budget</p>
+
+            <input
+                type="number"
+                id="budgetInput"
+                placeholder="Enter budget"
+            >
+
+            <button onclick="setBudget()">
+                Set Budget
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- Reports -->
+    <section id="reports" class="section">
+
+        <h2>Expense Summary</h2>
+
+        <div class="report-box">
+
+            <p>
+                Total number of expenses:
+                <strong id="expenseCount">0</strong>
+            </p>
+
+            <p>
+                Average expense:
+                <strong id="averageExpense">₹0</strong>
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            © 2026 Student Expense Manager
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
